@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>json placeholder</h1>
+    <h2>this fetch api</h2>
+    <input type="text" name="" id="input">
+    <input type="text" name="" id="input1">
+    <input type="text" name="" id="input1">
+    <button id="click" >click</button>
+    <p id="demo"></p>
+    <script>
+        const student ={name: 'farhad',age:20, education: 'ssc'}
+        const button = document.getElementById('click').addEventListener('click',function(){
+
+       const input = document.getElementById('input').value
+       const input1 = document.getElementById('input1').value
+       const input3 = document.getElementById('input1').value
+       const post = {
+        title: input,body: input1,education: input3
+       }
+       my(post)
+
+
+        })
+        
+
+        function my(student){
+
+
+            fetch('https://jsonplaceholder.typicode.com/posts',{
+            method: 'POST',
+            body: JSON.stringify(student),
+            headers:{
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        }
+        
+            
+        
+        
+
+        
+        
+    </script>
+</body>
+</html>
